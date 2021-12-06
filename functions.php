@@ -7,9 +7,9 @@
  * @package Jhakkas
  */
 
-if ( ! defined( 'ARICUP_VERSION' ) ) {
+if ( ! defined( 'JHAKKAS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'ARICUP_VERSION', '1.0.0' );
+	define( 'JHAKKAS_VERSION', '1.0.0' );
 }
 
 if ( ! function_exists( 'jhakkas_setup' ) ) :
@@ -142,13 +142,13 @@ add_action( 'widgets_init', 'jhakkas_widgets_init' );
  * Enqueue scripts and styles.
  */
 function jhakkas_scripts() {
-	wp_enqueue_style( 'jhakkas-style', get_stylesheet_uri(), array(), ARICUP_VERSION );
+	wp_enqueue_style( 'jhakkas-style', get_stylesheet_uri(), array(), JHAKKAS_VERSION );
 	wp_style_add_data( 'jhakkas-style', 'rtl', 'replace' );
 
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome/css/fontawesome-all-v5.3.1.min.css' );
 	wp_enqueue_style( 'jhakkas-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap', array(), null );
 
-	wp_enqueue_script( 'jhakkas-navigation', get_template_directory_uri() . '/js/navigation.js', array(), ARICUP_VERSION, true );
+	wp_enqueue_script( 'jhakkas-navigation', get_template_directory_uri() . '/js/navigation.js', array(), JHAKKAS_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
